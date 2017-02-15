@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <title>CoMNIST</title>
+        <link href="css/main.css?v1" rel="stylesheet"></link>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js/rgbcolor.js"></script> 
+        <script type="text/javascript" src="js/StackBlur.js"></script>
+        <script type="text/javascript" src="js/canvg.min.js"></script> 
+        <script src="js/draw.js?v2"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+        $(document).ready(
+            function(){
+                init();
+            }
+        )
+        </script>
+        <div class="container with-padding">
+            <h1>CoMNIST</h1>
+        </div>
+        <div class="container" id="draw-container">
+            <div> Draw me a letter <span id="dr-letter" ></span></div> 
+            <div id="draw-letter-area" >
+                <svg></svg>
+            </div>
+            <input type="button" value="Oops, I want to retry" id="clearbutton" onclick="$('#draw-letter-area svg').empty();"/>
+            <input type="button" value="Looks good, next!" id="submitbutton" onclick="save_to_image()" >
+            <input type="button" value="Enough, I'm done with this" id="finishbutton" onclick="showfinalform()" >
+        </div>    
+         <div id="finalform" class="container ">
+             <div>Please, fill in you contact information</div>
+             <input type='text' placeholder="Your name" id="username" />
+             <input type='text' placeholder="Your e-mail" id="usermail" required="required" onchange="validateEmail($(this).val())"/>
+             <input type='hidden' id="usercount" value="0" />
+            <input type="button" value="OK" id="finalformbutton" onclick="validatefinalform()" >
+         </div>
+    </body>
+</html>
