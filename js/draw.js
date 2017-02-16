@@ -141,7 +141,8 @@ function save_to_image(){
     var svg = $.trim(document.getElementById("draw-letter-area").innerHTML);
 
     //check if there is canvas
-    var canvas=document.getElementById("#canvas");
+    var canvas=document.getElementById("canvas");
+
     if (canvas==null || canvas==undefined){
         //create canvas
         var canvas = document.createElement('canvas');
