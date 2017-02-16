@@ -171,7 +171,8 @@ function save_to_image(){
                 let_count=parseInt($("#usercount").val());
                 $("#usercount").val(let_count+=1)
                 //generateLetter();
-                randletter();
+                $('#draw-letter-area svg').empty();
+                $("#dr-letter").html(randletter());
                 console.log('generate new letter');
                 
             });
