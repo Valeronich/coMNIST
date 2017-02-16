@@ -80,7 +80,9 @@ function getTouchPos(e) {
 function init() {
 
         //generate Random letter
-        generateLetter();
+        //generateLetter();
+         $("#dr-letter").html(randletter());    
+        console.log('Letter generate ok');
         // Get the specific canvas element from the HTML document
         svg = $("#draw-letter-area svg");
     
@@ -168,7 +170,9 @@ function save_to_image(){
                 //get number of letters
                 let_count=parseInt($("#usercount").val());
                 $("#usercount").val(let_count+=1)
-                generateLetter();
+                //generateLetter();
+                randletter();
+                console.log('generate new letter');
                 
             });
         //enable controls
@@ -179,9 +183,15 @@ function save_to_image(){
 }
 //generate random letter 
 function generateLetter(){
+
+       //var fCyr=false;
+
+        //if(sLang=="?ru") fCyr=true;
+
         $.ajax({
             type: "POST",
             url: "letter.php",
+          //  data: {  cyr: fCyr},
             success: function(data, textStatus) {
                 $("#dr-letter").html(data);    
                 console.log('Letter generate ok');
@@ -237,3 +247,19 @@ function validateEmail(email) {
        { $("#usermail ").addClass("error");
        return false;}
     }
+
+function randletter()
+{
+
+    var text = "";
+    var possible="";
+    if (location.search=='?ru')
+        possible = "БГДЖЗИЛФХЦЧЩШЬЪЭЮЯ";
+    else 
+        possible="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for( var i=0; i < 1; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    
+    return text;
+}
