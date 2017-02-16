@@ -256,7 +256,7 @@ function randletter()
     var text = "";
     var possible="";
     if (location.search=='?ru')
-        possible = "БГДЖЗИЛФХЦЧЩШЬЪЭЮЯ";
+        possible = "БГДЁЖЗИЙЛПФХЦЧШЩЬЫЪЭЮЯ";
     else 
         possible="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
