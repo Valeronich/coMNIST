@@ -14,7 +14,7 @@ function draw(x,y,fMove) {
         $(svg).append(document.createElementNS("http://www.w3.org/2000/svg", "path"));
         path=$(svg).find("path:last-child");
         path.attr({"d": "M"+x+","+y+"L"+x+","+y,
-                  "stroke-width":5,
+                  "stroke-width":15,
                  "fill": "transparent",
                  "stroke":"black",
                  "stroke-linecap":"round"
@@ -131,10 +131,14 @@ function init() {
 
 //Save svg to image function
 function save_to_image(){
+
+    if($("#draw-letter-area svg").html()!=""){
+
     //disable buttons to prevent user double click
     $("#submitbutton").attr("disabled","disabled");
     $("#clearbutton").attr("disabled","disabled");
     $("#finishbutton").attr("disabled","disabled");
+
     
     console.log("Save Image Event");
     //get the svg 
@@ -181,6 +185,10 @@ function save_to_image(){
         $("#submitbutton").removeAttr("disabled");
         $("#clearbutton").removeAttr("disabled");
         $("#finishbutton").removeAttr("disabled");
+    }
+        else {
+            alert("You didn't draw anything")
+        }
 
 }
 //generate random letter 
@@ -217,7 +225,7 @@ function showfinalform(){
 //validate and send data to server
 function validatefinalform(){
     $("#finalformbutton").attr("disabled","disabled");
-
+            
     //todo:addvalidation
     if($("#finalform .error").length==0)
     {
@@ -256,7 +264,7 @@ function randletter()
     var text = "";
     var possible="";
     if (location.search=='?ru')
-        possible = "БГДЁЖЗИЙЛПФХЦЧШЩЬЫЪЭЮЯ";
+        possible = "БГДЁЖЗИЙЛПФЦЧШЩЬЫЪЭЮЯ";
     else 
         possible="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

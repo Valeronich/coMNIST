@@ -8,7 +8,7 @@
         <script type="text/javascript" src="js/rgbcolor.js"></script> 
         <script type="text/javascript" src="js/StackBlur.js"></script>
         <script type="text/javascript" src="js/canvg.min.js"></script> 
-        <script src="js/draw.js?v5"></script>
+        <script src="js/draw.js?v6"></script>
     </head>
     <body>
         <script type="text/javascript">
@@ -31,7 +31,8 @@
             <input type="button" value="Enough, I'm done with this" id="finishbutton" onclick="showfinalform()" >
         </div>    
          <div id="finalform" class="container ">
-             <div>Please fill in you contact information</div>
+             <div>Please fill in your name if you want to appear on the greeting page of this project
+                You can also add your email address if you want to get updated on the progresses of this project (no spam!)</div>
              <input type='text' placeholder="Your name" id="username" />
              <input type='text' placeholder="Your e-mail" id="usermail" required="required" onchange="validateEmail($(this).val())"/>
              <input type='hidden' id="usercount" value="0" />
