@@ -79,6 +79,16 @@ function getTouchPos(e) {
 //Initiation of the drawing area
 function init() {
 
+        if(location.search=='?ru')
+            {
+                $(".en_info").hide();
+                $(".ru_info").show();
+                $("#clearbutton").val("Очистить");
+                $("#submitbutton").val("Перейти к следующей");
+                $("#finishbutton").val("Хватит, я закончил");
+                $("#username").attr("placeholder","Ваше имя");
+                $("#usermail").attr("placeholder","Ваш e-mail");
+            }
         //generate Random letter
         //generateLetter();
          $("#dr-letter").html(randletter());    
@@ -240,7 +250,9 @@ function validatefinalform(){
                             }
                     }).done(function(o) {
                         console.log('User data saved');
-                        $("#finalform").html("Thank you for participation!")
+                        $("#finalform").hide();
+                        $("#thankyou").show();
+                        
                     });
     }
     $("#finalformbutton").removeAttr("disabled");

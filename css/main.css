@@ -30,7 +30,7 @@ h1{
 .with-padding{
     padding: 40px 0;
 }
-#canvas, #finalform{
+#canvas, #finalform,.ru_info,#thankyou{
     display:none
 }
 .error{
