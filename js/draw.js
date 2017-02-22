@@ -138,11 +138,18 @@ function init() {
             });
         }
     }
+function validate_and_save(){
+    if($("#draw-letter-area svg").html()!=""){
+        save_to_image();
+    }
+    else {
+            alert("You didn't draw anything")
+        }
+}
 
 //Save svg to image function
 function save_to_image(){
 
-    if($("#draw-letter-area svg").html()!=""){
 
     //disable buttons to prevent user double click
     $("#submitbutton").attr("disabled","disabled");
@@ -195,18 +202,13 @@ function save_to_image(){
         $("#submitbutton").removeAttr("disabled");
         $("#clearbutton").removeAttr("disabled");
         $("#finishbutton").removeAttr("disabled");
-    }
-        else {
-            alert("You didn't draw anything")
-        }
 
 }
 //generate random letter 
 function generateLetter(){
 
-       //var fCyr=false;
-
-        //if(sLang=="?ru") fCyr=true;
+        //if smth is drawn save to image
+        if($("#draw-letter-area svg").html()!="") save_to_image();
 
         $.ajax({
             type: "POST",
@@ -226,6 +228,9 @@ function generateLetter(){
 
 //show user data form
 function showfinalform(){
+
+    //
+    
     //hide drawing area
     $("#draw-container").hide();
     //show user form
