@@ -192,6 +192,8 @@ function save_to_image(){
                 //get number of letters
                 let_count=parseInt($("#usercount").val());
                 $("#usercount").val(let_count+=1)
+                $("#usercounter").html(let_count+=1)
+                checkuserrate(let_count+1);
                 //generateLetter();
                 $('#draw-letter-area svg').empty();
                 $("#dr-letter").html(randletter());
@@ -289,4 +291,15 @@ function randletter()
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     
     return text;
+}
+
+
+//*******************************************************
+//Block that contains functions to add user rate
+//*******************************************************
+_USER_RATES=[0,1,2,3]
+_USER_LEVEL=["1","2","3"]
+
+function checkuserrate(iRate){
+    //todo
 }
