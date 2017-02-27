@@ -12,8 +12,29 @@ body{
 }
 h1{
 	font-weight: 300;
+    font-family: 'Barrio', cursive;
+    padding-left:10px;
 }
-
+input[type='button']{
+    padding: 5px 10px;
+    font-size: 20px;
+    margin-top:15px;
+    display:block;
+}
+.inline-info{
+    font-size:12px;
+    float:left;
+    padding-top:75px;
+    padding-left: 15px;
+}
+.logo{
+    float:left}
+.clear{
+    clear:both;
+}
+#draw-letter-area {
+    margin-bottom: 10px;
+}
 #draw-letter-area svg {
     border:1px solid black;
     height: 278px;
@@ -25,9 +46,16 @@ h1{
     }
 .container {
     margin:0 auto;
+    padding-left:10px;
 }
 .with-padding{
-    padding: 40px 0;
+    padding: 30px 0;
+}
+.with-small-padding{
+    padding: 15px 0;
+}
+.with-margin{
+    margin-left:15px;
 }
 #canvas, #finalform,.ru_info,#thankyou{
     display:none
@@ -43,3 +71,14 @@ h1{
 .container {
     width: 640px;
 }}
+
+.fb{
+    background-image: url('../images/fb.png')   ;
+    height:32px;
+    width:32px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+#usercounter{
+    display:inline-block;
+}

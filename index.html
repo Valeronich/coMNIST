@@ -4,12 +4,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 	    <title>CoMNIST</title>
-        <link href="css/main.css?v3" rel="stylesheet"></link>
+        <link href="css/main.css?v5" rel="stylesheet"></link>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
         <script type="text/javascript" src="js/rgbcolor.js"></script> 
         <script type="text/javascript" src="js/StackBlur.js"></script>
         <script type="text/javascript" src="js/canvg.min.js"></script> 
-        <script src="js/draw.js?v7"></script>
+        <script src="js/draw.js?v8"></script>
     </head>
     <body>
         <script type="text/javascript">
@@ -19,14 +20,18 @@
             }
         )
         </script>
-        <div class="container with-padding">
-            <h1>CoMNIST</h1>
+        <div class="container">
+            <!--<h1>CoMNIST</h1>-->
+            <img src="images/logo.png" height="100px" class="logo"/>
+            <div class="inline-info">Learning to write made easy</div>
+            <div class="clear"/>
         </div>
         <div class="container" id="draw-container">
-            <div> <span class="en_info">Draw me a letter</span><span class="ru_info">Нарисуйте букву </span> <span id="dr-letter" ></span></div> 
+            <div class="with-small-padding"> <span class="en_info">Draw me a uppercase letter</span><span class="ru_info">Нарисуйте заглавную букву </span> <span id="dr-letter" ></span></div> 
             <div id="draw-letter-area" >
                 <svg></svg>
             </div>
+            <div>Количество букв: <div id="usercounter">0</div></div>
             <input type="button" value="Oops, I want to retry"  id="clearbutton" onclick="$('#draw-letter-area svg').empty();"/>
             <input type="button" value="Looks good, next!"  id="submitbutton" onclick="save_to_image()" >
             <input type="button" value="Enough, I'm done with this"  id="finishbutton" onclick="showfinalform()" >
@@ -42,8 +47,25 @@
             <input type="button" value="OK" ruvalue="ОК" id="finalformbutton" onclick="validatefinalform()" >
          </div>
          <div id="thankyou" class="container">
-             <div class="en_info">Thank you! If you want, you can proceed with russian version <a href="/index.html?ru">here</a></div>
-             <div class="ru_info">Спасибо! Если хотите, продолжите с английской версией проекта <a href="/index.html">Здесь</a></div>
+             <div class="en_info">
+                 Thank you! If you want, you can proceed with russian version <a href="/index.html?ru">here</a>
+                <div>
+                    Don't hesitate to come back and play again! Also, you are welcome to ask your kids and friends to participate!!! 
+                </div>
+                <div>
+                    Share this link on facebook 
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//gregvi.al/" class="fb"></a>
+                </div>
+            </div>
+             <div class="ru_info">
+                 Спасибо! Если хотите, продолжите с английской версией проекта <a href="/index.html">Здесь</a>
+             <div>
+               Мы будем ждать вас снова, приходите и играйте! Мы будем признательны, если вы позовете поучастовать ваших детей и друзей!! 
+             </div>
+             <div>
+                  Поделитесь этой ссылкой на facebook <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//gregvi.al/" class="fb"></a>
+            </div>
+            </div>
          </div>
          <canvas id="canvas" height="278" width="278"/>
          <script>
