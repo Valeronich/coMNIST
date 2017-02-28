@@ -192,8 +192,7 @@ function save_to_image(){
                 //get number of letters
                 let_count=parseInt($("#usercount").val());
                 $("#usercount").val(let_count+=1)
-                $("#usercounter").html(let_count+=1)
-                checkuserrate(let_count+1);
+                animateCounter();
                 //generateLetter();
                 $('#draw-letter-area svg').empty();
                 $("#dr-letter").html(randletter());
@@ -297,9 +296,24 @@ function randletter()
 //*******************************************************
 //Block that contains functions to add user rate
 //*******************************************************
-_USER_RATES=[0,1,2,3]
-_USER_LEVEL=["1","2","3"]
+_USER_RATES=[0,1,3,5,7]
+_USER_LEVEL=["abc","beginner","pre-intermidiate","intermidiate","advanced"]
 
-function checkuserrate(iRate){
-    //todo
+
+function animateCounter(){
+    var iNumber=$("#usercount").val();
+    $("#usercounter").text(iNumber);
+    var iRate=parseInt($("#usercount").val());
+    for (i=0;i<_USER_RATES.length;i++){
+        if (iRate==_USER_RATES[i]){
+            $("#userLevel").text(_USER_LEVEL[i]);
+        }
+    }
+    /*iStartNumber=parseInt($("#usercounter").text());
+    jQuery({ Counter: iStartNumber }).animate({ Counter: iNumber }, {
+    duration: 1000,
+    step: function () {
+        $('#usercounter').text(Math.ceil(this.Counter));
+    }
+    });*/
 }

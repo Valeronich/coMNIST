@@ -3,14 +3,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-	    <title>CoMNIST</title>
+	    <title>CoMNIST, learning to write made easy</title>
         <link href="css/main.css?v5" rel="stylesheet"></link>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
         <script type="text/javascript" src="js/rgbcolor.js"></script> 
         <script type="text/javascript" src="js/StackBlur.js"></script>
         <script type="text/javascript" src="js/canvg.min.js"></script> 
-        <script src="js/draw.js?v8"></script>
+        <script src="js/draw.js?v9"></script>
     </head>
     <body>
         <script type="text/javascript">
@@ -32,18 +32,19 @@
                 <svg></svg>
             </div>
             <div>Количество букв: <div id="usercounter">0</div></div>
+            <div>Уровень: <div id="userLevel">0</div></div>
             <input type="button" value="Oops, I want to retry"  id="clearbutton" onclick="$('#draw-letter-area svg').empty();"/>
             <input type="button" value="Looks good, next!"  id="submitbutton" onclick="save_to_image()" >
             <input type="button" value="Enough, I'm done with this"  id="finishbutton" onclick="showfinalform()" >
         </div>    
-         <div id="finalform" class="container ">
+         <div id="finalform" class="container " style2="display:block">
              <div class="en_info">Please fill in your name if you want to appear on the greeting page of this project
                 You can also add your email address if you want to get updated on the progresses of this project (no spam!)</div>
              <div class="ru_info">Пожалуйста, введите свое имя, если хотите оказаться в листе благодарности данного проекта. Вы также можете добавить свой e-mail,
                   чтобы получать новости (Обещаем не спамить!)</div>   
              <input type='text' placeholder="Your name"  id="username" />
              <input type='text' placeholder="Your e-mail" id="usermail" required="required" onchange="validateEmail($(this).val())"/>
-             <input type='hidden' id="usercount" value="0" />
+             <input type='hidden' id="usercount" value="0"/>
             <input type="button" value="OK" ruvalue="ОК" id="finalformbutton" onclick="validatefinalform()" >
          </div>
          <div id="thankyou" class="container">
@@ -66,6 +67,7 @@
                   Поделитесь этой ссылкой на facebook <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//gregvi.al/" class="fb"></a>
             </div>
             </div>
+            
          </div>
          <canvas id="canvas" height="278" width="278"/>
          <script>
