@@ -57,7 +57,7 @@ input[type='button']{
 .with-margin{
     margin-left:15px;
 }
-#canvas, #finalform,.ru_info,#thankyou{
+#canvas, #finalform,.ru_info, .fr_info, #thankyou{
     display:none
 }
 .error{
