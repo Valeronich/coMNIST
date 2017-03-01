@@ -44,8 +44,8 @@ input[type='button']{
 }
 #draw-letter-area svg {
     border:1px solid black;
-    height: 278px;
-    width:278px;
+    height: 250px;
+    width:250px;
 }
 
 #dr-letter{

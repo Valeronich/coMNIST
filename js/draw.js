@@ -173,8 +173,8 @@ function save_to_image() {
 		var canvas = document.createElement('canvas');
 
 		canvas.id = "canvas";
-		canvas.height = "278";
-		canvas.width = "278";
+		canvas.height = "250";
+		canvas.width = "250";
 
 		document.body.appendChild(canvas);
 	}
@@ -301,7 +301,7 @@ function randletter() {
 //*******************************************************
 //Block that contains functions to add user rate
 //*******************************************************
-_USER_RATES = [0, 1, 5, 20, 50, 100]
+_USER_RATES = [0, 3, 10, 20, 50, 100,999999]
 _USER_LEVEL = ["OKA", "LADA", "VOLGA", "UAZ", "KAMAZ","BELAZ"]
 
 function animateCounter() {
@@ -312,7 +312,8 @@ function animateCounter() {
 		if (iRate == _USER_RATES[i]) {
 			$("#userLevel").text(_USER_LEVEL[i]);
 			$("#userLevelImg").removeClass().addClass("level_"+i);
-
+			$("#nextLevel").text(_USER_RATES[i+1]);
+	
 			//animate baloons
 			var w_height=$(window).height();
 			$(".baloons").fadeIn()
