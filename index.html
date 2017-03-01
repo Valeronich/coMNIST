@@ -4,13 +4,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 	    <title>CoMNIST, learning to write made easy</title>
-        <link href="css/main.css?v5" rel="stylesheet"></link>
+        <link href="css/main.css?v7" rel="stylesheet"></link>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
         <script type="text/javascript" src="js/rgbcolor.js"></script> 
         <script type="text/javascript" src="js/StackBlur.js"></script>
         <script type="text/javascript" src="js/canvg.min.js"></script> 
-        <script src="js/draw.js?v9"></script>
+        <script src="js/draw.js?v10"></script>
     </head>
     <body>
         <script type="text/javascript">
@@ -23,7 +23,9 @@
         <div class="container">
             <!--<h1>CoMNIST</h1>-->
             <img src="images/logo.png" height="100px" class="logo"/>
-            <div class="inline-info">Learning to write made easy</div>
+            <div class="inline-info en_info">Learning to write made easy</div>
+            <div class="inline-info ru_info">Обучение письму легко</div>
+            <div class="inline-info fr_info">Faciliter l'apprentissage de l'écriture</div>
             <div class="clear"/>
         </div>
         <div class="container" id="draw-container">
@@ -34,8 +36,22 @@
             <div id="draw-letter-area" >
                 <svg></svg>
             </div>
-            <div>Количество букв: <div id="usercounter">0</div></div>
-            <div>Уровень: <div id="userLevel">0</div></div>
+            <div id="user-rate-area">
+                <div>
+                    <span class="en_info">Number of letters: </span>
+                    <span class="ru_info">Количество букв: </span> 
+                    <span class="fr_info">Le nombre de lettres: </span> 
+                    <div id="usercounter">0</div>
+                </div>
+                <div>
+                    <span class="en_info">Your level: </span>
+                    <span class="ru_info">Ваш уровень: </span> 
+                    <span class="fr_info">Votre niveau: </span> 
+                    <span id="userLevel">OKA</span>
+                </div>
+                <div class="level_0" id="userLevelImg"></div>
+            </div>
+            <div class="clear"/>
             <input type="button" value="Oops, I want to retry"  id="clearbutton" onclick="$('#draw-letter-area svg').empty();"/>
             <input type="button" value="Looks good, next!"  id="submitbutton" onclick="save_to_image()" >
             <input type="button" value="Enough, I'm done with this"  id="finishbutton" onclick="showfinalform()" >
@@ -82,6 +98,11 @@
                   Partage sur facebook <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/" class="fb"></a>
             </div>
             </div>            
+         </div>
+         <div class="baloons">
+             <!--<div class="en_info">New Level!</div>
+             <div class="ru_info">Новый уровень!</div>
+             <div class="fr_info">Un nouveau niveau!</div>-->
          </div>
          <canvas id="canvas" height="278" width="278"/>
          <script>

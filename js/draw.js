@@ -301,8 +301,8 @@ function randletter() {
 //*******************************************************
 //Block that contains functions to add user rate
 //*******************************************************
-_USER_RATES = [0, 1, 3, 5, 7]
-_USER_LEVEL = ["abc", "beginner", "pre-intermidiate", "intermidiate", "advanced"]
+_USER_RATES = [0, 1, 5, 20, 50, 100]
+_USER_LEVEL = ["OKA", "LADA", "VOLGA", "UAZ", "KAMAZ","BELAZ"]
 
 function animateCounter() {
 	var iNumber = $("#usercount").val();
@@ -311,6 +311,14 @@ function animateCounter() {
 	for (i = 0; i < _USER_RATES.length; i++) {
 		if (iRate == _USER_RATES[i]) {
 			$("#userLevel").text(_USER_LEVEL[i]);
+			$("#userLevelImg").removeClass().addClass("level_"+i);
+
+			//animate baloons
+			var w_height=$(window).height();
+			$(".baloons").fadeIn()
+				.animate({top:w_height}, 3000, function() {
+					$(this).css({top:-223});
+				});
 		}
 	}
 	/*iStartNumber=parseInt($("#usercounter").text());

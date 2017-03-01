@@ -34,6 +34,13 @@ input[type='button']{
 }
 #draw-letter-area {
     margin-bottom: 10px;
+    float:left;
+}
+#user-rate-area{
+    float:left;
+}
+#user-rate-area div {
+    padding-left:10px;
 }
 #draw-letter-area svg {
     border:1px solid black;
@@ -63,9 +70,9 @@ input[type='button']{
 .error{
     color: red;
 }
-@media (max-width: 640px) {
+@media (max-width: 639px) {
 .container {
-    width: 100% !important;
+    width: 97% !important;
 }}
 @media (min-width: 640px) {
 .container {
@@ -81,4 +88,42 @@ input[type='button']{
 }
 #usercounter{
     display:inline-block;
+}
+#userLevelImg{
+    height:200px;
+    width:300px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 15 0;  
+}
+.level_0{
+    background-image: url('../images/level_0.png')   ;
+}
+.level_1{
+    background-image: url('../images/level_1.png')   ;
+    
+}
+.level_2{
+    background-image: url('../images/level_2.png')   ;
+}
+.level_3{
+    background-image: url('../images/level_3.png')   ;
+    
+}
+.level_4{
+    background-image: url('../images/level_4.png')   ;
+}
+.level_5{
+    background-image: url('../images/level_5.png')   ;
+    
+}
+.baloons{
+    background-image: url('../images/baloons.png')   ;
+    width:100%;
+    background-repeat: x-repeat;
+    height:223px;
+    position:absolute;
+    top:-223;
+    left:0;
+    
 }
