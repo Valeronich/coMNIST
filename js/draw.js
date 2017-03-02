@@ -236,13 +236,11 @@ function generateLetter() {
 
 //show user data form
 function showfinalform() {
-
-	//
-
 	//hide drawing area
 	$("#draw-container").hide();
 	//show user form
 	$("#finalform").show();
+	
 }
 
 //validate and send data to server

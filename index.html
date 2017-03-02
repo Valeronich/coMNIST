@@ -14,11 +14,11 @@
 		</head>
 		<body>
 			<script type="text/javascript">
-        $(document).ready(
-            function(){
-                init();
-            }
-        )
+				$(document).ready(
+					function(){
+						init();
+					}
+				)
 			</script>
 			<div class="container">
 				<!--<h1>CoMNIST</h1>-->
@@ -26,7 +26,7 @@
 				<div class="inline-info en_info">Learning to write made easy</div>
 				<div class="inline-info ru_info">Обучение письму легко</div>
 				<div class="inline-info fr_info">Faciliter l'apprentissage de l'écriture</div>
-				<div class="clear"/>
+				<div class="clear"></div>
 			</div>
 			<div class="container" id="draw-container">
 				<div class="with-small-padding"> <span class="en_info">Draw me a uppercase letter</span>
@@ -43,6 +43,7 @@
 						<span class="fr_info">Tu as dessiné</span> 
 						<div id="usercounter">0</div>
 						<span class="en_info">letter(s)</span>
+						<span class="ru_info">букв(ы)</span> 
 						<span class="fr_info">lettre(s)</span>
 					</div>
 
@@ -55,20 +56,20 @@
 					<div class="level_0" id="userLevelImg"></div>
 					<div>
 						<span class="en_info">Next objective: </span>
-						<span class="ru_info">следующая цель: </span> 
+						<span class="ru_info">Cледующая цель: </span> 
 						<span class="fr_info">Prochain objectif: </span> 
 						<div id="nextLevel">3</div>
 						<span class="en_info">letters</span>
-						<span class="ru_info">букв</span>
+						<span class="ru_info">букв<(ы)/span>
 						<span class="fr_info">lettres</span>
 					</div>
 				</div>
-				<div class="clear"/>
+				<div class="clear"></div>
 				<input type="button" value="Oops, I want to retry"  id="clearbutton" onclick="$('#draw-letter-area svg').empty();"/>
 				<input type="button" value="Looks good, next!"  id="submitbutton" onclick="save_to_image()" >
 					<input type="button" value="Enough, I'm done with this"  id="finishbutton" onclick="showfinalform()" >
 					</div>    
-					<div id="finalform" class="container " style2="display:block">
+					<div id="finalform" class="container " >
 						<div class="en_info">Please fill in your name if you want to appear on the greeting page of this project<p>
                   You can also add your email address if you want to get updated on the progresses of this project (no spam!)</div>
 							<div class="ru_info">Пожалуйста, введите свое имя, если хотите оказаться в листе благодарности данного проекта. <p>

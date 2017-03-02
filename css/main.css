@@ -86,7 +86,7 @@ input[type='button']{
     display: inline-block;
     background-repeat: no-repeat;
 }
-#usercounter{
+#usercounter, #nextLevel{
     display:inline-block;
 }
 #userLevelImg{
