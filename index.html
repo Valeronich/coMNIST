@@ -1,132 +1,143 @@
 <!DOCTYPE html">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>CoMNIST, learning to write made easy</title>
-		<link href="css/main.css?v7" rel="stylesheet"></link>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
-			<script type="text/javascript" src="js/rgbcolor.js"></script> 
-			<script type="text/javascript" src="js/StackBlur.js"></script>
-			<script type="text/javascript" src="js/canvg.min.js"></script> 
-			<script src="js/draw.js?v10"></script>
-		</head>
-		<body>
-			<script type="text/javascript">
-				$(document).ready(
-					function(){
-						init();
-					}
-				)
-			</script>
-			<div class="container">
-				<!--<h1>CoMNIST</h1>-->
-				<img src="images/logo.png" height="100px" class="logo"/>
-				<div class="inline-info en_info">Learning to write made easy</div>
-				<div class="inline-info ru_info">Обучение письму легко</div>
-				<div class="inline-info fr_info">Faciliter l'apprentissage de l'écriture</div>
-				<div class="clear"></div>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CoMNIST, learning to write made easy</title>
+	<link href="css/main.css?v10" rel="stylesheet"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+	<script type="text/javascript" src="js/rgbcolor.js"></script>
+	<script type="text/javascript" src="js/StackBlur.js"></script>
+	<script type="text/javascript" src="js/canvg.min.js"></script>
+	<script src="js/draw.js?v=1"></script>
+</head>
+
+<body>
+	<script type="text/javascript">		
+	$(document).ready(
+			function () {
+				init();
+			}
+		)
+	</script>
+	<div class="container">
+		<!--<h1>CoMNIST</h1>-->
+		<img src="images/logo.png" height="100px" class="logo" />
+		<img src="images/logo-sm.png" height="50px" class="logo-sm" />
+
+		<div class="inline-info en_info">Learning to write made easy</div>
+		<div class="inline-info ru_info">Обучение письму легко</div>
+		<div class="inline-info fr_info">Faciliter l'apprentissage de l'écriture</div>
+		<div class="clear"></div>
+	</div>
+	<div class="container" id="draw-container">
+		<div class="with-small-padding"> <span class="en_info">Draw me a uppercase letter</span>
+			<span class="ru_info">Нарисуйте заглавную букву</span>
+			<span class="fr_info">Dessine la lettre majuscule</span>
+			<span id="dr-letter"></span></div>
+		<div id="draw-letter-area">
+			<svg></svg>
+		</div>
+		<div id="user-rate-area">
+			<div>
+				<span class="en_info">You draw</span>
+				<span class="ru_info">Нарисовано </span>
+				<span class="fr_info">Tu as dessiné</span>
+				<div id="usercounter">0</div>
+				<span class="en_info">letter(s)</span>
+				<span class="ru_info">букв(ы)</span>
+				<span class="fr_info">lettre(s)</span>
 			</div>
-			<div class="container" id="draw-container">
-				<div class="with-small-padding"> <span class="en_info">Draw me a uppercase letter</span>
-					<span class="ru_info">Нарисуйте заглавную букву</span> 
-					<span class="fr_info">Dessine la lettre majuscule</span> 
-					<span id="dr-letter" ></span></div> 
-				<div id="draw-letter-area" >
-					<svg></svg>
-				</div>
-				<div id="user-rate-area">
-					<div>
-						<span class="en_info">You draw</span>
-						<span class="ru_info">Количество букв: </span> 
-						<span class="fr_info">Tu as dessiné</span> 
-						<div id="usercounter">0</div>
-						<span class="en_info">letter(s)</span>
-						<span class="ru_info">букв(ы)</span> 
-						<span class="fr_info">lettre(s)</span>
-					</div>
 
-					<div>
-						<span class="en_info">Your level: </span>
-						<span class="ru_info">Ваш уровень: </span> 
-						<span class="fr_info">Ton niveau: </span> 
-						<span id="userLevel">OKA</span>
-					</div>
-					<div class="level_0" id="userLevelImg"></div>
-					<div>
-						<span class="en_info">Next objective: </span>
-						<span class="ru_info">Cледующая цель: </span> 
-						<span class="fr_info">Prochain objectif: </span> 
-						<div id="nextLevel">3</div>
-						<span class="en_info">letters</span>
-						<span class="ru_info">букв<(ы)/span>
-						<span class="fr_info">lettres</span>
-					</div>
-				</div>
-				<div class="clear"></div>
-				<input type="button" value="Oops, I want to retry"  id="clearbutton" onclick="$('#draw-letter-area svg').empty();"/>
-				<input type="button" value="Looks good, next!"  id="submitbutton" onclick="save_to_image()" >
-					<input type="button" value="Enough, I'm done with this"  id="finishbutton" onclick="showfinalform()" >
-					</div>    
-					<div id="finalform" class="container " >
-						<div class="en_info">Please fill in your name if you want to appear on the greeting page of this project<p>
-                  You can also add your email address if you want to get updated on the progresses of this project (no spam!)</div>
-							<div class="ru_info">Пожалуйста, введите свое имя, если хотите оказаться в листе благодарности данного проекта. <p>
-			      Вы также можете добавить свой e-mail, чтобы получать новости (Обещаем не спамить!)</div>  
-								<div class="fr_info">Merci de remplir ton nom si tu veux apparaître sur la page de remerciement. <p>
-				  Tu peux aussi laisser ton adresse email si tu veux être informé des progrès de ce projet (promis, pas de spam!)</div>   
+			<div>
+				<span class="en_info">Your level: </span>
+				<span class="ru_info">Ваш уровень: </span>
+				<span class="fr_info">Ton niveau: </span>
+				<span id="userLevel">OKA</span>
+			</div>
+			<div class="level_0" id="userLevelImg"></div>
+			<div>
+				<span class="en_info">Next objective: </span>
+				<span class="ru_info">Cледующая цель: </span>
+				<span class="fr_info">Prochain objectif: </span>
+				<div id="nextLevel">3</div>
+				<span class="en_info">letters</span>
+				<span class="ru_info">букв(ы)</span>
+				<span class="fr_info">lettres</span>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<input type="button" value="Oops, I want to retry" id="clearbutton" onclick="$('#draw-letter-area svg').empty();" />
+		<input type="button" value="Looks good, next!" id="submitbutton" onclick="save_to_image()">
+		<input type="button" value="Enough, I'm done with this" id="finishbutton" onclick="showfinalform()">
+	</div>
+	<div id="finalform" class="container ">
+		<div class="en_info">Please fill in your name if you want to appear on the greeting page of this project
+			<p>
+				You can also add your email address if you want to get updated on the progresses of this project (no spam!)</div>
+		<div class="ru_info">Пожалуйста, введите свое имя, если хотите оказаться в листе благодарности данного проекта.
+			<p>
+				Вы также можете добавить свой e-mail, чтобы получать новости (Обещаем не спамить!)</div>
+		<div class="fr_info">Merci de remplir ton nom si tu veux apparaître sur la page de remerciement.
+			<p>
+				Tu peux aussi laisser ton adresse email si tu veux être informé des progrès de ce projet (promis, pas de spam!)</div>
 
-									<input type='text' placeholder="Your name"  id="username" />
-									<input type='text' placeholder="Your e-mail" id="usermail" required="required" onchange="validateEmail($(this).val())"/>
-									<input type='hidden' id="usercount" value="0"/>
-									<input type="button" value="OK" ruvalue="ОК" id="finalformbutton" onclick="validatefinalform()" >
-									</div>
-									<div id="thankyou" class="container">
-										<div class="en_info">
-                 Thank you! If you want, you can proceed with version with russian letters <a href="/index.html?ru">here</a>
-											<div>
-                    Don't hesitate to come back and play again! Also, you are welcome to ask your kids and friends to participate!!! 
-											</div>
-											<div>
-                    Share this link on facebook 
-												<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/" class="fb"></a>
-											</div>
-										</div>
-										<div class="ru_info">
-                 Спасибо! Если хотите, продолжите с английской версией проекта <a href="/index.html">Здесь</a>
-											<div>
-               Мы будем ждать вас снова, приходите и играйте! Мы будем признательны, если вы позовете поучастовать ваших детей и друзей!! 
-											</div>
-											<div>
-                  Поделитесь этой ссылкой на facebook <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/" class="fb"></a>
-											</div>
-										</div>
-										<div class="fr_info">
-                 Merci! Tu peux essayer la version avec des lettres russes <a href="/index.html?ru">ici</a>
-											<div>
-                 N'hésite pas à partager avec tes amis et à faire participer ta famille, en particulier les enfants! 
-											</div>
-											<div>
-                  Partage sur facebook <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/" class="fb"></a>
-											</div>
-										</div>            
-									</div>
-									<div class="baloons">
-										<!--<div class="en_info">New Level!</div>
+		<input type='text' placeholder="Your name" id="username" />
+		<input type='text' placeholder="Your e-mail" id="usermail" required="required" onchange="validateEmail($(this).val())" />
+		<input type='hidden' id="usercount" value="0" />
+		<input type="button" value="OK" ruvalue="ОК" id="finalformbutton" onclick="validatefinalform()">
+	</div>
+	<div id="thankyou" class="container">
+		<div class="en_info">
+			Thank you! If you want, you can proceed with version with russian letters <a href="/index.html?ru">here</a>
+			<div>
+				Don't hesitate to come back and play again! Also, you are welcome to ask your kids and friends to participate!!!
+			</div>
+			<div>
+				Share this link on facebook
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/" class="fb"></a>
+			</div>
+		</div>
+		<div class="ru_info">
+			Спасибо! Если хотите, продолжите с английской версией проекта <a href="/index.html">Здесь</a>
+			<div>
+				Мы будем ждать вас снова, приходите и играйте! Мы будем признательны, если вы позовете поучастовать ваших детей и друзей!!
+			</div>
+			<div>
+				Поделитесь этой ссылкой на facebook
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/"
+					class="fb"></a>
+			</div>
+		</div>
+		<div class="fr_info">
+			Merci! Tu peux essayer la version avec des lettres russes <a href="/index.html?ru">ici</a>
+			<div>
+				N'hésite pas à partager avec tes amis et à faire participer ta famille, en particulier les enfants!
+			</div>
+			<div>
+				Partage sur facebook
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/" class="fb"></a>
+			</div>
+		</div>
+	</div>
+	<div class="baloons">
+		<!--<div class="en_info">New Level!</div>
              <div class="ru_info">Новый уровень!</div>
              <div class="fr_info">Un nouveau niveau!</div>-->
-									</div>
-									<canvas id="canvas" height="278" width="278"/>
-									<script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	</div>
+	<canvas id="canvas" height="278" width="278" />
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-86523398-2', 'auto');
-            ga('send', 'pageview');
+		ga('create', 'UA-86523398-2', 'auto');
+		ga('send', 'pageview');
 
-									</script>
-								</body>
-							</html>
+	</script>
+</body>
+
+</html>

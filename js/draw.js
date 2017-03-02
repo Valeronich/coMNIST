@@ -155,7 +155,8 @@ function validate_and_save() {
 
 //Save svg to image function
 function save_to_image() {
-
+	
+	var f_saved=false;
 	//disable buttons to prevent user double click
 	$("#submitbutton").attr("disabled", "disabled");
 	$("#clearbutton").attr("disabled", "disabled");
@@ -197,6 +198,8 @@ function save_to_image() {
 		let_count = parseInt($("#usercount").val());
 		$("#usercount").val(let_count += 1)
 		animateCounter();
+		f_saved=true;
+		setTimeout("enableControls()",2000);
 		//generateLetter();
 		$('#draw-letter-area svg').empty();
 		$("#dr-letter").html(randletter());
@@ -204,11 +207,17 @@ function save_to_image() {
 
 	});
 	//enable controls
+	if (!f_saved){
+		enableControls();
+	}
+
+}
+function enableControls(){
 	$("#submitbutton").removeAttr("disabled");
 	$("#clearbutton").removeAttr("disabled");
 	$("#finishbutton").removeAttr("disabled");
-
 }
+
 //generate random letter
 function generateLetter() {
 
@@ -299,7 +308,7 @@ function randletter() {
 //*******************************************************
 //Block that contains functions to add user rate
 //*******************************************************
-_USER_RATES = [0, 3, 10, 20, 50, 100,999999]
+_USER_RATES = [0, 3, 10, 20, 50, 100, 999999]
 _USER_LEVEL = ["OKA", "LADA", "VOLGA", "UAZ", "KAMAZ","BELAZ"]
 
 function animateCounter() {
