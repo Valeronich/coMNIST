@@ -5,13 +5,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>CoMNIST, learning to write made easy</title>
-	<link href="css/main.css?v10" rel="stylesheet"></link>
+	<link href="css/main.css?v=1" rel="stylesheet"></link>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
 	<script type="text/javascript" src="js/rgbcolor.js"></script>
 	<script type="text/javascript" src="js/StackBlur.js"></script>
 	<script type="text/javascript" src="js/canvg.min.js"></script>
-	<script src="js/draw.js?v=1"></script>
+	<script src="js/draw.js?v=4"></script>
 </head>
 
 <body>
@@ -70,7 +70,7 @@
 		</div>
 		<div class="clear"></div>
 		<input type="button" value="Oops, I want to retry" id="clearbutton" onclick="$('#draw-letter-area svg').empty();" />
-		<input type="button" value="Looks good, next!" id="submitbutton" onclick="save_to_image()">
+		<input type="button" value="Looks good, next!" id="submitbutton" onclick="validate_and_save()">
 		<input type="button" value="Enough, I'm done with this" id="finishbutton" onclick="showfinalform()">
 	</div>
 	<div id="finalform" class="container ">

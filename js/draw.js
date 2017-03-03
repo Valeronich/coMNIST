@@ -156,13 +156,12 @@ function validate_and_save() {
 //Save svg to image function
 function save_to_image() {
 	
-	var f_saved=false;
 	//disable buttons to prevent user double click
 	$("#submitbutton").attr("disabled", "disabled");
 	$("#clearbutton").attr("disabled", "disabled");
 	$("#finishbutton").attr("disabled", "disabled");
 
-	console.log("Save Image Event");
+	console.log("Save Image Event Begin");
 	//get the svg
 	var svg = $.trim(document.getElementById("draw-letter-area").innerHTML);
 
@@ -193,24 +192,26 @@ function save_to_image() {
 			letter: $("#dr-letter").html()
 		}
 	}).done(function (o) {
-		console.log('saved');
+		
+		console.log(o);
+		if (o!="Unable to save the file."){
+			$('#draw-letter-area svg').empty();
+		}
+		else alert(o);
 		//get number of letters
 		let_count = parseInt($("#usercount").val());
 		$("#usercount").val(let_count += 1)
 		animateCounter();
-		f_saved=true;
-		setTimeout("enableControls()",2000);
 		//generateLetter();
-		$('#draw-letter-area svg').empty();
 		$("#dr-letter").html(randletter());
-		console.log('generate new letter');
-
+		setTimeout("enableControls()",2000);
+		console.log('Generate new letter');
+		console.log("Save Image Event End");
 	});
 	//enable controls
-	if (!f_saved){
-		enableControls();
-	}
-
+	// if (!f_saved){
+	// 	enableControls();
+	// }
 }
 function enableControls(){
 	$("#submitbutton").removeAttr("disabled");
@@ -220,10 +221,6 @@ function enableControls(){
 
 //generate random letter
 function generateLetter() {
-
-	//if smth is drawn save to image
-	if ($("#draw-letter-area svg").html() != "")
-		save_to_image();
 
 	$.ajax({
 		type: "POST",
@@ -245,6 +242,9 @@ function generateLetter() {
 
 //show user data form
 function showfinalform() {
+	//if smth is drawn save to image
+	if ($("#draw-letter-area svg").html() != "")
+		save_to_image();
 	//hide drawing area
 	$("#draw-container").hide();
 	//show user form
