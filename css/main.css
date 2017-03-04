@@ -81,8 +81,9 @@ input[type='button']{
     display:inline-block;
 }
 #userLevelImg{
-    height:200px;
-    width:300px;
+    height:176px;
+    width:264px;
+	background-size: 264px auto;
     display: inline-block;
     background-repeat: no-repeat;
     background-position: 15 0;  
