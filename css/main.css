@@ -140,7 +140,7 @@ input[type='button']{
     width:90px;
     background-size: 90px auto;
 }
-#usercounter, #nextLevel{
+#usercounter, #nextLevel, #userLevel{
     display:block;
 }
 #user-rate-area{
