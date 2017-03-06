@@ -77,6 +77,13 @@ input[type='button']{
     display: inline-block;
     background-repeat: no-repeat;
 }
+.vk{
+    background-image: url('../images/vk.png')   ;
+    height:32px;
+    width:32px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
 #usercounter, #nextLevel{
     display:inline-block;
 }
