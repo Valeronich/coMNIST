@@ -308,8 +308,8 @@ function randletter() {
 //*******************************************************
 //Block that contains functions to add user rate
 //*******************************************************
-_USER_RATES = [0, 3, 10, 20, 50, 100, 999999]
-_USER_LEVEL = ["OKA", "LADA", "VOLGA", "UAZ", "KAMAZ","BELAZ"]
+_USER_RATES = [0, 3, 10, 20, 50, 75, 100, 999999]
+_USER_LEVEL = ["OKA", "LADA", "VOLGA", "UAZ", "KAMAZ","BELAZ", "TUPO."]
 
 function animateCounter() {
 	var iNumber = $("#usercount").val();
