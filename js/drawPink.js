@@ -17,7 +17,7 @@ function draw(x, y, fMove) {
 			"d": "M" + x + "," + y + "L" + x + "," + y,
 			"stroke-width": 15,
 			"fill": "transparent",
-			"stroke": "black",
+			"stroke": "pink",
 			"stroke-linecap": "round"
 		});
 	} else {
@@ -79,7 +79,6 @@ function init() {
 	if (location.search == '?ru') {
 		$(".en_info").hide();
 		$(".fr_info").hide();
-		$(".cn_info").hide();
 		$(".ru_info").show();
 		$("#clearbutton").val("Очистить");
 		$("#submitbutton").val("Перейти к следующей");
@@ -90,24 +89,12 @@ function init() {
 	if (location.search == '?fr') {
 		$(".en_info").hide();
 		$(".ru_info").hide();
-		$(".cn_info").hide();
-		$(".fr_info").show();
+		$(".fr_info").show()
 		$("#clearbutton").val("Oups, je veux réessayer");
 		$("#submitbutton").val("Suivante!");
 		$("#finishbutton").val("Ca suffit pour l'instant");
 		$("#username").attr("placeholder", "Nom");
 		$("#usermail").attr("placeholder", "Adresse e-mail");
-	}
-	if (location.search == '?cn') {
-		$(".en_info").hide();
-		$(".ru_info").hide();
-		$(".fr_info").hide();
-		$(".cn_info").show();
-		$("#clearbutton").val("Oops, let me retry");
-		$("#submitbutton").val("Next!");
-		$("#finishbutton").val("Enough, I'm done with this");
-		$("#username").attr("placeholder", "Name");
-		$("#usermail").attr("placeholder", "E-mail address");
 	}
 	//generate Random letter
 	//generateLetter();
@@ -308,9 +295,7 @@ function randletter() {
 	var text = "";
 	var possible = "";
 	if (location.search == '?ru')
-		possible = "БГДЁЖЗИЙЛПФЦЧШЩЬЫЪЭЮЯТР";
-	else if (location.search == '?cn')
-		possible = "女男子好安木林大小心水火山灾月日明门东北西南";
+		possible = "БГДЁЖЗИЙЛПФЦЧШЩЬЫЪЭЮЯ";
 	else
 		possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -323,8 +308,8 @@ function randletter() {
 //*******************************************************
 //Block that contains functions to add user rate
 //*******************************************************
-_USER_RATES = [0, 3, 10, 15, 25, 50, 75, 100, 125, 999999]
-_USER_LEVEL = ["OKA", "LADA", "SEDAN", "VOLGA", "UAZ", "KAMAZ","BELAZ", "TUPOLEV", "BURAN", "FERRARI"]
+_USER_RATES = [0, 3, 10, 20, 50, 75, 100, 999999]
+_USER_LEVEL = ["OKA", "LADA", "VOLGA", "UAZ", "KAMAZ","BELAZ", "TUPO", "FERRARI"]
 
 function animateCounter() {
 	var iNumber = $("#usercount").val();
