@@ -31,12 +31,15 @@
 		<div class="inline-info en_info">Learning to write made easy</div>
 		<div class="inline-info ru_info">Обучение письму легко</div>
 		<div class="inline-info fr_info">Faciliter l'apprentissage de l'écriture</div>
+		<div class="inline-info cn_info">Learning to write made easy</div>
 		<div class="clear"></div>
 	</div>
 	<div class="container" id="draw-container">
-		<div class="with-small-padding"> <span class="en_info">Draw me a uppercase letter</span>
+		<div class="with-small-padding"> 
+			<span class="en_info">Draw me a uppercase letter</span>
 			<span class="ru_info">Нарисуйте заглавную букву</span>
 			<span class="fr_info">Dessine la lettre majuscule</span>
+			<span class="cn_info">Draw me this character</span>
 			<span id="dr-letter"></span></div>
 		<div id="draw-letter-area">
 			<svg></svg>
@@ -46,16 +49,19 @@
 				<span class="en_info">You draw</span>
 				<span class="ru_info">Нарисовано </span>
 				<span class="fr_info">Tu as dessiné</span>
+				<span class="cn_info">You draw</span>
 				<div id="usercounter">0</div>
 				<span class="en_info">letter(s)</span>
 				<span class="ru_info">букв(ы)</span>
 				<span class="fr_info">lettre(s)</span>
+				<span class="cn_info">character(s)</span>
 			</div>
 
 			<div>
 				<span class="en_info">Your level: </span>
 				<span class="ru_info">Ваш уровень: </span>
 				<span class="fr_info">Ton niveau: </span>
+				<span class="cn_info">Your level: </span>
 				<span id="userLevel">OKA</span>
 			</div>
 			<div class="level_0" id="userLevelImg"></div>
@@ -63,10 +69,12 @@
 				<span class="en_info">Next objective: </span>
 				<span class="ru_info">Cледующая цель: </span>
 				<span class="fr_info">Prochain objectif: </span>
+				<span class="cn_info">Next objective: </span>
 				<div id="nextLevel">3</div>
 				<span class="en_info">letters</span>
 				<span class="ru_info">букв(ы)</span>
 				<span class="fr_info">lettres</span>
+				<span class="cn_info">characters</span>
 			</div>
 		</div>
 		<div class="clear"></div>
@@ -77,14 +85,20 @@
 	<div id="finalform" class="container ">
 		<div class="en_info">Please fill in your name if you want to appear on the greeting page of this project
 			<p>
-				You can also add your email address if you want to get updated on the progresses of this project (no spam!)</div>
+				You can also add your email address if you want to get updated on the progresses of this project (no spam!)
+		</div>
 		<div class="ru_info">Пожалуйста, введите свое имя, если хотите оказаться в листе благодарности данного проекта.
 			<p>
-				Вы также можете добавить свой e-mail, чтобы получать новости (Обещаем не спамить!)</div>
+				Вы также можете добавить свой e-mail, чтобы получать новости (Обещаем не спамить!)
+		</div>
 		<div class="fr_info">Merci de remplir ton nom si tu veux apparaître sur la page de remerciement.
 			<p>
-				Tu peux aussi laisser ton adresse email si tu veux être informé des progrès de ce projet (promis, pas de spam!)</div>
-
+				Tu peux aussi laisser ton adresse email si tu veux être informé des progrès de ce projet (promis, pas de spam!)
+		</div>
+		<div class="cn_info">Please fill in your name if you want to appear on the greeting page of this project
+			<p>
+				You can also add your email address if you want to get updated on the progresses of this project (no spam!)
+		</div>
 		<input type='text' placeholder="Your name" id="username" />
 		<input type='text' placeholder="Your e-mail" id="usermail" required="required" onchange="validateEmail($(this).val())" />
 		<input type='hidden' id="usercount" value="0" />
@@ -123,12 +137,20 @@
 				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/" class="fb" target="_blank"></a>
 			</div>
 		</div>
+		<div class="cn_info">
+			Thank you! If you want, you can proceed with version with russian letters <a href="/index.html?ru">here</a>
+			<div>
+				Don't hesitate to come back and play again! Also, you are welcome to ask your kids and friends to participate!!!
+			</div>
+			<div>
+				Share this link on facebook
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//comnist.gregvi.al/" target="_blank" class="fb"></a>
+			</div>
+		</div>
 
 	</div>
 	<div class="baloons">
-		<!--<div class="en_info">New Level!</div>
-             <div class="ru_info">Новый уровень!</div>
-             <div class="fr_info">Un nouveau niveau!</div>-->
+
 	</div>
 	<canvas id="canvas" height="278" width="278" />
 	<script>

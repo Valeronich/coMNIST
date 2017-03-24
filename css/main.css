@@ -64,7 +64,7 @@ input[type='button']{
 .with-margin{
     margin-left:15px;
 }
-#canvas, #finalform,.ru_info, .fr_info, #thankyou{
+#canvas, #finalform,.ru_info, .fr_info, .cn_info, #thankyou{
     display:none
 }
 .error{
@@ -100,21 +100,27 @@ input[type='button']{
 }
 .level_1{
     background-image: url('../images/level_1.png')   ;
-    
 }
 .level_2{
     background-image: url('../images/level_2.png')   ;
 }
 .level_3{
     background-image: url('../images/level_3.png')   ;
-    
 }
 .level_4{
     background-image: url('../images/level_4.png')   ;
 }
 .level_5{
-    background-image: url('../images/level_5.png')   ;
-    
+    background-image: url('../images/level_5.png')   ;   
+}
+.level_6{
+    background-image: url('../images/level_6.png')   ;   
+}
+.level_7{
+    background-image: url('../images/level_7.png')   ;   
+}
+.level_8{
+    background-image: url('../images/level_8.png')   ;  
 }
 .baloons{
     background-image: url('../images/baloons.png')   ;
@@ -153,7 +159,7 @@ input[type='button']{
 #user-rate-area{
     font-size:12px;
 }
-#user-rate-area .ru_info,#user-rate-area .fr_info {
+#user-rate-area .ru_info,#user-rate-area .fr_info,#user-rate-area .cn_info {
     font-size:10px;
 }
 
